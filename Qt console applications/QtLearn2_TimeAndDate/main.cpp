@@ -127,7 +127,7 @@ void dayOfWeekQDate() {
 }
 
 //Count of days in month
-void monthInQDate(){
+void countdaysinmonthQDate(){
     QTextStream out(stdout);
     QList<QString> months;
 
@@ -159,8 +159,90 @@ void monthInQDate(){
     out << "There are " << dt1.daysInYear() << " days in year " << QString::number(dt1.year()) << Qt::endl;
 }
 
+//Checking if the date is correct
+void correctQDate() {
+    QTextStream out(stdout);
+
+    QList<QDate> dates({QDate(2020,5,11),QDate(2020,8,1), QDate(2020,2,30)}); //30 february not exist
+    for(int i = 0; i < dates.size(); i++){
+        if(dates.at(i).isValid())
+            out << "Date " << i+1 << " is a valid date" << Qt::endl;
+        else
+            out << "Date " << i+1 << " is not a valid date" << Qt::endl;
+    }
+}
+
+//We can easily count how many days are left until a specific date
+void dateToQDate() {
+    QTextStream out(stdout);
+
+    QDate dt(2020,8,14);
+    QDate nd = dt.addDays(55);
+    QDate xmas(2020,12,24);
+    out << "55 days from " << dt.toString() << " is " << nd.toString() << Qt::endl;
+    out << "There are " << QDate::currentDate().daysTo(xmas) << " days till Christmass" << Qt::endl;
+}
+
+//Class QDateTime
+void qdatetimeInit(){
+    QTextStream out(stdout);
+    QDateTime cdt = QDateTime::currentDateTime();
+
+    out << "The current dateTime is " << cdt.toString() << Qt::endl;
+    out << "The current date is" << " " << cdt.date().toString() << Qt::endl;
+    out << "The current time is" << " " << cdt.time().toString() <<  Qt::endl;
+}
+
+//Julian Date
+void julQDate() {
+    QTextStream out(stdout);
+    QDate cd = QDate::currentDate();
+    out << "Gregorian date for today: " << cd.toString(Qt::ISODate) << Qt::endl;
+    out << "Julian day for today: " << cd.toJulianDay() << Qt::endl;
+}
+
+//The following example shows how many days have passed since two historical events
+void twoHistQDate() {
+    QTextStream out(stdout);
+    QDate dima(2001,11,8);
+    QDate karina(2002,8,14);
+    QDate cd = QDate::currentDate();
+    int j_today = cd.toJulianDay();
+    int j_dima = dima.toJulianDay();
+    int j_karina = karina.toJulianDay();
+
+    out << "Days since Dima's birthday " << j_today - j_dima << Qt::endl;
+    out << "Days since Karina's birthday " << j_today - j_karina << Qt::endl;
+    if(j_dima > j_karina)
+        out << "Days between Dima's and Karina's birthdays: " << j_dima - j_karina << Qt::endl;
+    else
+        out << "Days between Dima's and Karina's birthdays: " << j_karina - j_dima  << Qt::endl;
+}
+
+//UTC time/date
+void utcQDate() {
+    QTextStream out(stdout);
+    QDateTime cdt = QDateTime::currentDateTime();
+    out << "Universal datetime: " << cdt.toUTC().toString() << Qt::endl;
+    out << "Local datetime: " << cdt.toLocalTime().toString() << Qt::endl;
+}
+
+//Unix time is the number of seconds since the Unix era
+void unixQDateTime() {
+    QTextStream out(stdout);
+    time_t tdd = time(0); //Taking UNIX-time
+    out << tdd << Qt::endl;
+    QDateTime dt;
+    dt.setTime_t(tdd);
+    out << dt.toString() << Qt::endl;
+    QDateTime cd = QDateTime::currentDateTime();
+    out << cd.toTime_t() << Qt::endl;
+}
+
+
+
 int main()
 {
-    monthInQDate();
+    unixQDateTime();
     return 0;
 }
