@@ -3,11 +3,11 @@
 #include <vector>
 #include <conio.h>
 
-#define A "FileA.txt"
-#define B "FileB.txt"
-#define C "FileC.txt"
-#define D "FileD.txt"
-#define Data "DataFile.txt"
+#define A "D://self studying/Lab1_Algo/FileA.txt"
+#define B "D://self studying/Lab1_Algo/FileB.txt"
+#define C "D://self studying/Lab1_Algo/FileC.txt"
+#define D "D://self studying/Lab1_Algo/FileD.txt"
+#define Data "D://self studying/Lab1_Algo/DataFile.txt"
 
 using namespace std;
 
@@ -58,7 +58,7 @@ void merge(vector<int> &arr, int l, int m, int r)
     }
 }
 
-//Сортуємо вектор, використовуючи рекурсивне сортування злиттям
+//Розділяємо вектор, як це робиться в звичайному сортуванні злиттям -- рекурсивно
 void mergeSort(vector<int> &arr, int l, int r)
 {
     if (l < r)
@@ -70,7 +70,7 @@ void mergeSort(vector<int> &arr, int l, int r)
     }
 }
 
-//Функція зчитування данних з файлу у вектор
+//Функція зчитування данних з файлу у вектор, зчитуємо з файлу та записуємо в вектор
 vector<int> read(string file, int s, int &pos)
 {
     vector<int> v;
@@ -79,7 +79,7 @@ vector<int> read(string file, int s, int &pos)
     fin.seekg(pos);
     for (int i = 0; i < s; i++)
     {
-        if (!fin.eof())
+        if (!fin.eof()) //Пока не конец файла; eof - end of file
         {
             fin >> buffer;
             v.push_back(buffer);
@@ -122,7 +122,7 @@ void write(string file, int i)
 //Функція видалення вмісту файлу
 void clear(string file)
 {
-    ofstream fout(file, ios_base::trunc);
+    ofstream fout(file, ios_base::trunc); //Видаляє вміст існуючого файлу при створенні його керуючого об'єкта.
     fout.close();
 }
 
@@ -165,7 +165,7 @@ void divide(string in, int size)
 void polyphaseMerge(int s)
 {
     clearAll();
-    string in1 = A, in2 = B, out = C;
+    string in1 = A, in2 = B, out = C; //Задаём пути к файлу в строки
     int pos1 = 0, pos2 = 0, ctr1, ctr2;
     int size = s;
     divide(Data, size);
