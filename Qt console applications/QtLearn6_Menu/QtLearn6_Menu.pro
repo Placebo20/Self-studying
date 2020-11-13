@@ -11,8 +11,11 @@ CONFIG -= app_bundle
 
 SOURCES += \
         anothermenu.cpp \
+        checkable.cpp \
         main.cpp \
-        simplemenu.cpp
+        simplemenu.cpp \
+        skeleton.cpp \
+        toolbar.cpp
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -21,4 +24,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 HEADERS += \
     anothermenu.h \
-    simplemenu.h
+    checkable.h \
+    simplemenu.h \
+    skeleton.h \
+    toolbar.h

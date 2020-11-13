@@ -6,6 +6,7 @@
 
 class AnotherMenu : public QMainWindow
 {
+    Q_OBJECT
 public:
     AnotherMenu(QWidget *parent = 0);
 };

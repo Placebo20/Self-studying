@@ -8,6 +8,7 @@
 
 class SimpleMenu : public QMainWindow
 {
+    Q_OBJECT
 public:
     SimpleMenu(QWidget* parent = 0);
 };
