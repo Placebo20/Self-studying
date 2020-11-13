@@ -188,7 +188,7 @@ void polyphaseMerge(int s)
             ctr2 = 0;
 
             c1 = read(in1, pos1);
-            if (pos1 < 0) c2 = 2147483647;
+            if (pos1 < 0) c2 = 2147483647; //Це найбільше число, яке вміщує 32-розрядний знаковий цілий тип даних signed int32.
 
             c2 = read(in2, pos2);
             if (pos2 < 0) c2 = 2147483647;
