@@ -2,13 +2,15 @@
 #include "verticalbox.h"
 #include "buttons.h"
 #include "nestedlayouts.h"
+#include "formex.h"
+#include "calculator.h"
+#include "review.h"
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    NestedLayouts window;
-    window.setWindowTitle("Nested Layouts");
-    window.resize(500,500);
+    Review window;
+    window.setWindowTitle("Review");
     window.show();
     return a.exec();
 }

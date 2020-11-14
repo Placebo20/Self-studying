@@ -12,8 +12,11 @@ CONFIG -= app_bundle
 SOURCES += \
         absolute.cpp \
         buttons.cpp \
+        calculator.cpp \
+        formex.cpp \
         main.cpp \
         nestedlayouts.cpp \
+        review.cpp \
         verticalbox.cpp
 
 # Default rules for deployment.
@@ -24,5 +27,8 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 HEADERS += \
     absolute.h \
     buttons.h \
+    calculator.h \
+    formex.h \
     nestedlayouts.h \
+    review.h \
     verticalbox.h
