@@ -13,7 +13,8 @@ SOURCES += \
         disablingsignals.cpp \
         keypress.cpp \
         main.cpp \
-        move.cpp
+        move.cpp \
+        timer.cpp
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -24,4 +25,5 @@ HEADERS += \
     click.h \
     disablingsignals.h \
     keypress.h \
-    move.h
+    move.h \
+    timer.h
