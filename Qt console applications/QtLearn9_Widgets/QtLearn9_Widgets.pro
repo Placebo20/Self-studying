@@ -11,8 +11,11 @@ CONFIG -= app_bundle
 SOURCES += \
         comboboxex.cpp \
         label.cpp \
+        ledit.cpp \
         main.cpp \
-        slider.cpp
+        slider.cpp \
+        spinbox.cpp \
+        statusbar.cpp
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -22,4 +25,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 HEADERS += \
     comboboxex.h \
     label.h \
-    slider.h
+    ledit.h \
+    slider.h \
+    spinbox.h \
+    statusbar.h
