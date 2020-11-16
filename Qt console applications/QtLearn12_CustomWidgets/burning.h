@@ -1,0 +1,26 @@
+#ifndef BURNING_H
+#define BURNING_H
+#include <QWidget>
+#include <QSlider>
+#include <QFrame>
+#include <QVBoxLayout>
+#include <QHBoxLayout>
+#include "widget.h"
+
+class Burning : public QFrame
+{
+    Q_OBJECT
+public:
+    Burning(QWidget *parent = 0);
+    int getCurrentWidth();
+public slots:
+    void valueChanged(int);
+private:
+    QSlider *slider;
+    Widget *widget;
+    int cur_width;
+
+    void initUI();
+};
+
+#endif // BURNING_H
