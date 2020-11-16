@@ -40,7 +40,9 @@ ListWidget::ListWidget(QWidget *parent)
 void ListWidget::addItem()
 {
     QString c_text = QInputDialog::getText(this,"Item","Enter new item");
-    QString s_text = c_text.simplified();
+    QString s_text = c_text.simplified(); //the QString :: simplified () method returns a string
+    //in which the leading and trailing spaces have been removed,
+    //and all spaces inside the string have been replaced by a single space;
 
     if(!s_text.isEmpty()){
         lw->addItem(s_text);

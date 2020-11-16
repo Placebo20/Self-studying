@@ -11,7 +11,11 @@ CONFIG -= app_bundle
 SOURCES += \
         checkbox.cpp \
         listwidget.cpp \
-        main.cpp
+        main.cpp \
+        pixmap.cpp \
+        progressbar.cpp \
+        splitter.cpp \
+        table.cpp
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -20,4 +24,8 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 HEADERS += \
     checkbox.h \
-    listwidget.h
+    listwidget.h \
+    pixmap.h \
+    progressbar.h \
+    splitter.h \
+    table.h
